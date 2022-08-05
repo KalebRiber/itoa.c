@@ -3,7 +3,7 @@
 
 typedef unsigned char byte;
 
-char * itoa(int number) {
+char *itoa(int number) {
   int i = 1,
       n = 0,
       mul = i;
@@ -18,7 +18,7 @@ char * itoa(int number) {
   while (number % mul != number && i++) mul *= 10;
   mul = 10;
 
-  byte * cnumber = malloc(sizeof(byte) * i--);
+  byte *cnumber = malloc(sizeof(byte) * i--);
 
   for (int x = 0; x <= i; x++)
     *(cnumber + x) = 0x00;
@@ -36,7 +36,7 @@ char * itoa(int number) {
   return cnumber;
 }
 
-int main(int argc, char * argv[]) {
+int main(int argc, char *argv[]) {
   char *number = itoa(12345),
        *negative_number = itoa(-12345);
 
